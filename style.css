@@ -2,6 +2,8 @@
   --bg-color: #121214;
   --primary-color: #42D3FF;
   --text-color: #FFFFFF;
+
+  font-size: 62.5%;
 }
 
 body{
@@ -9,4 +11,10 @@ body{
   color: var(--text-color);
 
   font-family: 'Roboto', sans-serif;
+}
+
+#timer{
+  font-size: 8.8rem;
+
+  display: flex;
 }
