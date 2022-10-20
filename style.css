@@ -19,6 +19,13 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+button{
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
 #timer{
   font-size: 8.8rem;
 
