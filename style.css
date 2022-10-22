@@ -35,6 +35,12 @@ button{
   display: none;
 }
 
+.play svg path, 
+.pause svg path, 
+.sound-on svg path{
+  fill: var(--primary-color);
+}
+
 #timer{
   font-size: 8.8rem;
 
