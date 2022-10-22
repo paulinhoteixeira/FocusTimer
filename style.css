@@ -6,8 +6,13 @@
 
 :root{
   --bg-color: #121214;
-  --primary-color: #42D3FF;
+
+  --base-color: 194;
+  --bg-primary-light: hsla(var(--base-color), 100%, 63%, 0.13);
+  --primary-color: hsl(var(--base-color), 100%, 63%);
+
   --text-color: #FFFFFF;
+
 
   font-size: 62.5%;
 }
@@ -34,4 +39,8 @@ button{
   font-size: 8.8rem;
 
   display: flex;
+}
+
+#controls{
+  background-color: var(--bg-primary-light);
 }
