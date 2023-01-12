@@ -1,7 +1,13 @@
-let play = document.querySelector(".play")
+let buttonPlay = document.querySelector(".play")
+let buttonPause =document.querySelector(".pause")
 
-function toggle() {
-  play.classList.add("hide")
-  document.querySelector(".pause").classList.remove("hide")
 
-}
+buttonPlay.addEventListener('click', function(){
+  buttonPlay.classList.add("hide")
+  buttonPause.classList.remove("hide")
+})
+
+buttonPause.addEventListener('click', function(){
+  buttonPause.classList.add("hide")
+  buttonPlay.classList.remove("hide")
+})
