@@ -9,36 +9,38 @@ const minutesDisplay = document.querySelector(".minutes");
 const secondsDisplay = document.querySelector(".seconds");
 
 function resetControls() {
-    buttonPlay.classList.remove('hide')
-      buttonPause.classList.add('hide')
-      buttonSet.classList.remove('hide')
-      buttonStop.classList.add('hide')
+  buttonPlay.classList.remove("hide");
+  buttonPause.classList.add("hide");
+  buttonSet.classList.remove("hide");
+  buttonStop.classList.add("hide");
 }
 
-function countdown(){
-  setTimeout(function() {
-    let seconds =  Number(secondsDisplay.textContent)
-    let minutes = Number(minutesDisplay.textContent)
+function updateTimerDisplay(minutes, seconds) {
+  minutesDisplay.textContent = String(minutes).padStart(2, "0");
+  secondsDisplay.textContent = String(seconds).padStart(2, "0");
+}
 
-    secondsDisplay.textContent = "00"
+function countdown() {
+  setTimeout(function () {
+    let seconds = Number(secondsDisplay.textContent);
+    let minutes = Number(minutesDisplay.textContent);
 
-    if (minutes <= 0) {  
-      resetControls()
-      return
+    updateTimerDisplay(minutes, 0);
+
+    if (minutes <= 0) {
+      resetControls();
+      return;
     }
 
-    if( seconds <= 0 ) {
-      seconds = 2
-
-      minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
+    if (seconds <= 0) {
+      seconds = 59;
+      --minutes;
     }
 
-    secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
-    
-    
+    updateTimerDisplay(minutes, String(seconds - 1));
 
-    countdown()
-  }, 1000)
+    countdown();
+  }, 1000);
 }
 
 buttonPlay.addEventListener("click", function () {
@@ -56,8 +58,7 @@ buttonPause.addEventListener("click", function () {
 });
 
 buttonStop.addEventListener("click", function () {
-  resetControls()
-
+  resetControls();
 });
 
 buttonSoundOff.addEventListener("click", function () {
@@ -72,5 +73,5 @@ buttonSoundOn.addEventListener("click", function () {
 
 buttonSet.addEventListener("click", function () {
   minutes = prompt("Quantos minutos?");
-  minutesDisplay.textContent = String(minutes).padStart(2, "0");
+  updateTimerDisplay(minutes, 0);
 });
