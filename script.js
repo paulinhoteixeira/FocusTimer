@@ -8,25 +8,27 @@ let minutes;
 const minutesDisplay = document.querySelector(".minutes");
 const secondsDisplay = document.querySelector(".seconds");
 
+function resetControls() {
+    buttonPlay.classList.remove('hide')
+      buttonPause.classList.add('hide')
+      buttonSet.classList.remove('hide')
+      buttonStop.classList.add('hide')
+}
+
 function countdown(){
   setTimeout(function() {
     let seconds =  Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
 
-    secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
+    secondsDisplay.textContent = "00"
 
-    if (minutes <= 0) {
-  
-      buttonPlay.classList.remove('hide')
-      buttonPause.classList.add('hide')
-      buttonSet.classList.remove('hide')
-      buttonStop.classList.add('hide')
-
+    if (minutes <= 0) {  
+      resetControls()
       return
     }
 
     if( seconds <= 0 ) {
-      seconds = 5
+      seconds = 2
 
       minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
     }
@@ -54,10 +56,8 @@ buttonPause.addEventListener("click", function () {
 });
 
 buttonStop.addEventListener("click", function () {
-  buttonPlay.classList.remove("hide");
-  buttonPause.classList.add("hide");
-  buttonStop.classList.add("hide");
-  buttonSet.classList.remove("hide");
+  resetControls()
+
 });
 
 buttonSoundOff.addEventListener("click", function () {
