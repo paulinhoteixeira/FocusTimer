@@ -34,12 +34,15 @@ function countdown() {
     updateTimerDisplay(minutes, 0);
 
     if (minutes <= 0) {
-      resetControls();
-      return;
+      if(seconds <= 0){
+        resetControls();
+        return;
+
+      }
     }
 
     if (seconds <= 0) {
-      seconds = 3;
+      seconds = 4;
       --minutes;
     }
 
@@ -47,6 +50,7 @@ function countdown() {
 
     countdown();
   }, 1000);
+
 }
 
 buttonPlay.addEventListener("click", function () {
@@ -80,6 +84,12 @@ buttonSoundOn.addEventListener("click", function () {
 });
 
 buttonSet.addEventListener("click", function () {
-  minutes = prompt("Quantos minutos?") || 0;
+  let newMinutes = prompt("Quantos minutos?");
+  if(!newMinutes) {
+    resetTimer()
+    return
+  }
+
+  minutes = newMinutes
   updateTimerDisplay(minutes, 0);
 });
