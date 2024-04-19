@@ -10,8 +10,15 @@
   --text-color: hsl(var(--hue), 40%, 98%);
   --primary-color: hsl(var(--hue), 100%, 63%);
   --controls-bg-color: hsl(var(--hue), 0%, 14%);
+  --button-secondary: hsl(var(--hue), 40%, 98%);
 
   font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light{
+  --bg-color: hsl(var(--hue), 40%, 98%);
+  --text-color: hsl(var(--hue), 5%, 7%);
+  --controls-bg-color: hsl(var(--hue), 0%, 14%);
 }
 
 body{
@@ -57,7 +64,7 @@ button{
 }
 
 .secondary{
-  color: var(--text-color);
+  color: var(--button-secondary);
 }
 
 .running .ph-play-circle,
@@ -69,3 +76,4 @@ html:not(.running) .ph-speaker-none{
   display: none;
 
 }
+
