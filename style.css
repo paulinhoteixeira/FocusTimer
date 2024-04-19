@@ -34,8 +34,8 @@ body{
 
 #timer{
   font-size: 9.6rem;
-  font-weight: bold;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 #controls{
@@ -58,4 +58,14 @@ button{
 
 .secondary{
   color: var(--text-color);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-high,
+html:not(.running) .ph-stop-circle,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-speaker-none{
+  display: none;
+
 }
