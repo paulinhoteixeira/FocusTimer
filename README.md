@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-  <img alt="Ecoleta" src="/focusTimerDark.jpg" width="100%">
+  <img alt="Focus Timer" src="/focusTimerDark.jpg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
